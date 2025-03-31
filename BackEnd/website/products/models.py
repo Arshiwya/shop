@@ -26,6 +26,14 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def get_children(self):
+        children_list = []
+        children = self.subcategories.all()
+
+        for child in children:
+            children_list.append(child.name)
+        return children_list
+
     def save(
             self,
             *args,
