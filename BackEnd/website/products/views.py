@@ -27,7 +27,7 @@ class ProductDetailView(RetrieveAPIView):
     lookup_field = "pk"
 
 
-class CategoryCreateList(ListCreateAPIView):
+class CategoryCreateListView(ListCreateAPIView):
     # permission_classes = [permissions.IsAuthenticated]
 
     def get_serializer_class(self):
@@ -39,3 +39,9 @@ class CategoryCreateList(ListCreateAPIView):
     def get_queryset(self):
         queryset = Category.objects.filter(is_active=True)
         return queryset
+
+
+class CategoryDetailView(RetrieveAPIView):
+    serializer_class = CategoryListDetailSerializer
+    queryset = Category.objects.filter(is_active=True)
+    lookup_field = "pk"

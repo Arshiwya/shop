@@ -23,9 +23,11 @@ class ProductCreateSerializer(serializers.ModelSerializer):
 
 
 class CategoryListDetailSerializer(serializers.ModelSerializer):
+    children = serializers.ListField(source="get_children")
+
     class Meta:
         model = Category
-        fields = ["pk", "name", "parent", "description", "is_active"]
+        fields = ["pk", "name", "parent", "description", "children", "is_active"]
 
 
 class CategoryCreateSerializer(serializers.ModelSerializer):
