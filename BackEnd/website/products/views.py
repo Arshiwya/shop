@@ -45,3 +45,21 @@ class CategoryDetailView(RetrieveAPIView):
     serializer_class = CategoryListDetailSerializer
     queryset = Category.objects.filter(is_active=True)
     lookup_field = "pk"
+
+
+class OfferProductListView(ProductCreateListView):
+    # permission_classes = [permissions.IsAuthenticated]
+    http_method_names = ["get"]
+
+    def get_queryset(self):
+        queryset = Product.objects.filter(status__name="offer")
+        return queryset
+
+
+class PopularProductListView(ProductCreateListView):
+    # permission_classes = [permissions.IsAuthenticated]
+    http_method_names = ["get"]
+
+    def get_queryset(self):
+        queryset = Product.objects.filter(status__name="popular")
+        return queryset
