@@ -31,7 +31,11 @@ class Category(models.Model):
         children = self.subcategories.all()
 
         for child in children:
-            children_list.append(child.name)
+            data = {
+                "pk": child.id,
+                "name": child.name
+            }
+            children_list.append(data)
         return children_list
 
     def save(
@@ -42,9 +46,13 @@ class Category(models.Model):
             using=None,
             update_fields=None,
     ):
+
         if self.slug == "":
-            slug = slugify(self.name)
-            self.slug = slug
+            while True:
+                slug = slug_generator(size=6)
+                if not Category.objects.filter(slug=slug).exists():
+                    self.slug = slug
+                    break
 
         return super(Category, self).save(*args,
                                           force_insert=False,

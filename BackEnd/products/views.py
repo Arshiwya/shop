@@ -37,7 +37,7 @@ class CategoryCreateListView(ListCreateAPIView):
             return CategoryCreateSerializer
 
     def get_queryset(self):
-        queryset = Category.objects.filter(is_active=True)
+        queryset = Category.objects.filter(is_active=True, parent=None)
         return queryset
 
 
