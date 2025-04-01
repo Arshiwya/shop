@@ -7,7 +7,15 @@ const routes = [
     {path:'/category-info/:categoryName' , element: <CategoryInfo/>},
     {path:'/product-info/:producName' , element: <Product/>},
 
-
 ]
 
 export default routes
+
+
+
+
+
+
+
+
+// http://127.0.0.1:8000/api/products/
