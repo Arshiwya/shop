@@ -12,7 +12,9 @@ export default function Navbar() {
         <LeftSectionHeader />
       </div>
     {/* Bottom Header */}
+    <div className="mt-6">
     <BottonHeader/>
+    </div>
     </>
   );
 }
