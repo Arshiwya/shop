@@ -3,11 +3,13 @@
 venv/
 .env/
 data/
+BackEnd/data/db.sqlite3
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 *.sqlite3
+
 
 # frontend
 
