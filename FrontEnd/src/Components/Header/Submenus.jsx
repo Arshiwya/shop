@@ -1,15 +1,18 @@
 import React from "react";
 
+
 export default function Submenus() {
+
+  
+
   return (
     
-    <div
-      class="hover:[&amp;>*]block group/submenu layout-container flex flex-col gap-4 py-6"
+    <div className="hover:[&amp;>*]block group/submenu layout-container flex flex-col gap-4 py-6"
       data-sentry-component="ProductsMenu"
       data-sentry-source-file="products-menu.tsx"
     >
-      <button class="relative flex items-center justify-center overflow-hidden rounded text-body-14 focus-visible:outline-none px-4 py-2 font-bold pl-3 text-primary-main hover:text-primary-shade-700 disabled:text-primary-shade-200 !w-fit cursor-default">
-        <span class="flex items-center relative z-10 gap-2 flex-row-reverse">
+      <button className="relative flex items-center justify-center overflow-hidden rounded text-body-14 focus-visible:outline-none px-4 py-2 font-bold pl-3 text-primary-main hover:text-primary-shade-700 disabled:text-primary-shade-200 !w-fit cursor-default">
+        <span className="flex items-center relative z-10 gap-2 flex-row-reverse">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -30,7 +33,7 @@ export default function Submenus() {
             ></path>
           </svg>
 
-          <span class="cursor-pointer">
+          <span className="cursor-pointer">
             <a
               className="text-red-500"
               data-sentry-element="Link"
