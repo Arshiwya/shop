@@ -34,3 +34,8 @@ class CategoryCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ["name", "parent", "description", "is_active"]
+
+
+class SearchSerializer(serializers.Serializer):  # noqa
+    products = ProductListDetailSerializer(many=True)
+    categories = CategoryListDetailSerializer(many=True)

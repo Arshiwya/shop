@@ -1,6 +1,7 @@
 import string
 import random
 from django.db import models
+from .managers import ProductManager, CategoryManager
 from django.utils.text import slugify
 
 
@@ -17,6 +18,7 @@ class Category(models.Model):
     is_active = models.BooleanField(default=True, verbose_name="active")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="create time")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="last update")
+    objects = CategoryManager()
 
     class Meta:
         verbose_name = "category"
@@ -88,6 +90,7 @@ class Product(models.Model):
                                related_name="products", null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="create time")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="last update")
+    objects = ProductManager()
 
     class Meta:
         verbose_name = "product"
