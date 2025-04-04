@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function SectionHeader({title , btnTitle , btnHref}) {
   return (
     <>
-      <section className="mt-7">
+      <section className="mt-11">
         <div className="container flex items-center justify-between">
           {/* title */}
 
