@@ -1,9 +1,6 @@
 import React from "react";
 
-
-export default function Submenus() {
-
-  
+export default function Submenus(props) {
 
   return (
     
@@ -40,7 +37,7 @@ export default function Submenus() {
               data-sentry-source-file="products-menu.tsx"
               href="/categories/makeup"
             >
-            {}
+            {props.name}
             </a>
           </span>
         </span>

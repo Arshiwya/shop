@@ -1,9 +1,11 @@
 from rest_framework.generics import ListCreateAPIView, RetrieveAPIView
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from rest_framework import permissions
 
 from .models import Product, Category
 from .serializers import ProductListDetailSerializer, ProductCreateSerializer, CategoryListDetailSerializer, \
-    CategoryCreateSerializer
+    CategoryCreateSerializer, SearchSerializer
 
 
 class ProductCreateListView(ListCreateAPIView):
@@ -63,3 +65,25 @@ class PopularProductListView(ProductCreateListView):
     def get_queryset(self):
         queryset = Product.objects.filter(status__name="popular")
         return queryset
+
+
+class SearchView(APIView):
+    serializer_class = SearchSerializer
+
+    def get(self, request, **kwargs):
+        response = self.get_search_response(kwargs)
+        return response
+
+    def get_search_response(self, kwargs):
+        query = kwargs["query"]
+        products = Product.objects.search(query=query)
+        categories = Category.objects.search(query=query)
+
+        search_data = {
+            "products": products,
+            "categories": categories
+        }
+
+        serializer = self.serializer_class(search_data)
+
+        return Response(serializer.data)
