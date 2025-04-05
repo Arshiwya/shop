@@ -4,6 +4,7 @@ import SliderIndex from '../Components/Slider/SliderIndex'
 import SectionHeader from '../Components/SectionHeader/SectionHeader'
 import PopularProducts from '../Components/PopularProducts/PopularProducts'
 import HomePageBox from '../Components/HomePageBox/HomePageBox'
+import Banner from '../Components/Banner/Banner'
 
 export default function Index() {
   return (
@@ -13,6 +14,7 @@ export default function Index() {
     <SliderIndex/>
     <PopularProducts/>
     <HomePageBox/>
+    <Banner/>
     </div>
     </>
   )
