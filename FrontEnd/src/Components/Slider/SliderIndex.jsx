@@ -9,7 +9,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 export default function SliderIndex() {
   return (
     <main>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center mt-7">
         <div className="relative w-full">
           <Swiper
             modules={[Pagination, Autoplay]} // Remove Navigation from modules
