@@ -20,7 +20,7 @@ export default function BottonHeader() {
             {categorys.map((category) => (
               <li class="flex cursor-pointer font-Dana text-lg items-center transition-all duration-100 ease-in-out hover:text-brand-secondary group">
                 <a href="/categories/makeup">{category.name}</a>
-                <div class="absolute right-1/2 top-11 z-10 hidden w-full translate-x-1/2 transform cursor-auto justify-start gap-4 overflow-auto rounded-b-md border-b border-t border-neutral-200 bg-white shadow-low group-hover:flex lg:max-h-fit">
+                <div class="absolute right-1/2 top-11 z-10  w-full hidden translate-x-1/2 transform cursor-auto justify-start gap-x-16 overflow-auto rounded-b-md border-b border-t border-neutral-200 bg-white shadow-low group-hover:flex">
                   {category.children.map((submenu) => (
                     <Submenus {...submenu} />
                   ))}

@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Submenus(props) {
+  const [subMenus, setSubMenus] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://127.0.0.1:8000/api/products/categories/${subMenus}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setSubMenus(data);
+      });
+  }, []);
 
   return (
-    
-    <div className="hover:[&amp;>*]block group/submenu layout-container flex flex-col gap-4 py-6"
+    <div
+      className="hover:[&amp;>*]block group/submenu layout-container flex flex-col gap-4 py-6 h-96"
       data-sentry-component="ProductsMenu"
       data-sentry-source-file="products-menu.tsx"
     >
-      <button className="relative flex items-center justify-center overflow-hidden rounded text-body-14 focus-visible:outline-none px-4 py-2 font-bold pl-3 text-primary-main hover:text-primary-shade-700 disabled:text-primary-shade-200 !w-fit cursor-default">
+      <button className="relative flex items-center justify-center  rounded text-body-14 focus-visible:outline-none px-4 py-2 font-bold pl-3 text-primary-main hover:text-primary-shade-700 disabled:text-primary-shade-200 !w-fit cursor-default">
         <span className="flex items-center relative z-10 gap-2 flex-row-reverse">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -37,9 +48,17 @@ export default function Submenus(props) {
               data-sentry-source-file="products-menu.tsx"
               href="/categories/makeup"
             >
-            {props.name}
+              {props.name}
             </a>
           </span>
+          {/* Sub Menu */}
+          <div className="absolute top-7 right-0">
+            <div className="flex min-w-[176px] border-spacing-px flex-col gap-6 ">
+              <div className="flex flex-col gap-2">
+                <Link className="border-r-2 border-brand-secondary bg-white pr-2 text-sm font-bold text-text-black lg:leading-6"></Link>
+              </div>
+            </div>
+          </div>
         </span>
       </button>
     </div>
