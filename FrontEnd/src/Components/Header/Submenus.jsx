@@ -55,7 +55,11 @@ export default function Submenus(props) {
           <div className="absolute top-7 right-0">
             <div className="flex min-w-[176px] border-spacing-px flex-col gap-6 ">
               <div className="flex flex-col gap-2">
-                <Link className="border-r-2 border-brand-secondary bg-white pr-2 text-sm font-bold text-text-black lg:leading-6"></Link>
+                {subMenus.map((submenu) => (
+                  <Link className="border-r-2 border-brand-secondary bg-white pr-2 text-sm font-bold text-text-black lg:leading-6">
+                    {submenu.name}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>

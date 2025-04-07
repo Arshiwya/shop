@@ -6,6 +6,7 @@ import HomePageBox from "../Components/HomePageBox/HomePageBox";
 import Banner from "../Components/Banner/Banner";
 import NewProducts from "../Components/NewProducts/NewProducts";
 import DescriptionHome from "../Components/DescriptionHome/DescriptionHome";
+import Footer from "../Components/Footer/Footer";
 
 export default function Index() {
   return (
@@ -19,6 +20,7 @@ export default function Index() {
         <NewProducts />
         <DescriptionHome />
       </div>
+      <Footer />
     </>
   );
 }
