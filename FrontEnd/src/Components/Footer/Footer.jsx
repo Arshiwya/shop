@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -67,12 +68,12 @@ export default function Footer() {
               data-sentry-component="ColumnsLinks"
               data-sentry-source-file="columns-links.tsx"
             >
-              <a
+              <Link
                 className="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
-                href="/faq"
+                to={'/faq'}
               >
                 پرسش‌های متداول
-              </a>
+              </Link>
               <a
                 class="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
                 href="/faq?category=order"
