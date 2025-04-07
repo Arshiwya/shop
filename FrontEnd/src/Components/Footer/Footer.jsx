@@ -10,7 +10,7 @@ export default function Footer() {
               شرکت خانومی
             </span>
             <div
-              className="flex flex-col gap-4.5 lg:gap-3 lg:pr-2 child:font-Dana child:!text-lg"
+              className="flex flex-col gap-4.5 lg:gap-3 lg:pr-2 child:font-Dana child:!text-lg child-hover:text-pink-800 transition-all"
               data-sentry-component="ColumnsLinks"
               data-sentry-source-file="columns-links.tsx"
             >
@@ -63,7 +63,7 @@ export default function Footer() {
               خدمات مشتریان
             </span>
             <div
-              className="flex flex-col gap-4.5 lg:gap-3 lg:pr-2 child:font-Dana child:!text-lg"
+              className="flex flex-col gap-4.5 lg:gap-3 lg:pr-2 child:font-Dana child:!text-lg child-hover:text-pink-800 transition-all"
               data-sentry-component="ColumnsLinks"
               data-sentry-source-file="columns-links.tsx"
             >
