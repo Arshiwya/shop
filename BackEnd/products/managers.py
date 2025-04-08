@@ -12,5 +12,5 @@ class ProductManager(models.Manager):
 class CategoryManager(models.Manager):
 
     def search(self, query):
-        categories = self.filter(Q(name__icontains=query) | Q(description__icontains=query))
+        categories = self.filter(Q(name__icontains=query) | Q(description__icontains=query), is_active=True)
         return categories
