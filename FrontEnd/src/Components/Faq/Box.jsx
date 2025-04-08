@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-export default function Box({ title, question, answer }) {
+export default function Box({  question, answer }) {
   const [isShowDesc, setIsShowDesc] = useState(false);
 
   return (
     <>
       <div className="">
-        <span className="font-DanaMeduim text-lg "> {title}</span>
+        <span className="font-DanaMeduim text-lg "> </span>
         <div>
           <div className="flex justify-between mt-8">
             <h1 className="pb-7 font-Dana text-lg">

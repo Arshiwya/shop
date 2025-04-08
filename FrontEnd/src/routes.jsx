@@ -10,6 +10,7 @@ const routes = [
   { path: "/faq", element: <Faq /> },
 ];
 
-export default routes;
 
+
+export default routes;
 // http://127.0.0.1:8000/api/products/
