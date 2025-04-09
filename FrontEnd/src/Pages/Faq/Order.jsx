@@ -11,7 +11,7 @@ export default function Order() {
     { title: "همه سوالات", path: "/faq" },
     { title: "ضمانت خانومی", path: "/faq/guarantee" },
     { title: "ثبت سفارش", path: "/faq/order" },
-    { title: "جعبه صورتی و شانس ", path: "/faq/pink-box" },
+    { title: "جعبه صورتی و شانس ", path: "/faq/chance" },
     { title: "ویرایش سفارش", path: "/faq/edit-order" },
     { title: "پیگیری سفارش", path: "/faq/track-order" },
     { title: "ارسال و تحویل کالا", path: "/faq/delivery" },
