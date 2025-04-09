@@ -33,30 +33,15 @@ export default function Footer() {
               >
                 فرصت‌های شغلی
               </a>
-              <a
-                class="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
-                href="/privacy"
+
+              <Link
+                className="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
+                to={'guarantee'}
               >
-                حریم خصوصی
-              </a>
-              <a
-                class="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
-                href="https://www.khanoumi.com/blog/"
-              >
-                مجله خانومی
-              </a>
-              <a
-                class="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
-                href="https://www.khanoumi.com/business/"
-              >
-                خانومی بیزینس
-              </a>
-              <a
-                class="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
-                href="https://www.khanoumi.com/tv/"
-              >
-                خانومی TV
-              </a>
+                 گارانتی
+              </Link>
+
+
             </div>
           </div>
           <div className="flex flex-col gap-8">
