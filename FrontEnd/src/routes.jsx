@@ -4,6 +4,7 @@ import Product from "./Pages/Product";
 import Order from "./Pages/Faq/Order";
 import Faq from "./Pages/Faq/Faq";
 import FaqIndex from "./Pages/Faq/FaqIndex";
+import Delivery from "./Pages/Faq/Delivery";
 
 const routes = [
   { path: "/", element: <Index /> },
@@ -15,6 +16,8 @@ const routes = [
     children: [
       { path: "/faq", element: <Faq /> },
       { path: "order", element: <Order /> },
+      { path: "delivery", element: <Delivery /> },
+
     ],
   },
 ];

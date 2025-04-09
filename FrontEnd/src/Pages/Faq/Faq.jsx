@@ -34,18 +34,7 @@ export default function Faq() {
               isActive={currentPath === btn.path}
             />
           ))}
-          {/* <Button title={"همه سوالات"} />
-          <Button title={"ضمانت خانومی"} />
-          <Link to={"order"}>
-            <Button title={"ثبت سفارش"} />
-          </Link>
-          <Button title={"جعبه صورتی و شانس "} />
-          <Button title={"ویرایش سفارش"} />
-          <Button title={"پیگیری سفارش"} />
-          <Button title={"ارسال و تحویل کالا"} />
-          <Button title={"بازگشت کالا"} />
-          <Button title={"قوانین انتشار دیدگاه"} />
-          <Button title={"پرداخت و استرداد"} /> */}
+
         </div>
 
         {/* Boxs */}
