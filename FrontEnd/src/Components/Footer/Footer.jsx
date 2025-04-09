@@ -27,12 +27,7 @@ export default function Footer() {
               >
                 درباره ما
               </a>
-              <a
-                class="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
-                href="https://careers.khanoumi.com"
-              >
-                فرصت‌های شغلی
-              </a>
+
 
               <Link
                 className="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
@@ -97,12 +92,7 @@ export default function Footer() {
               >
                 خرید کالای شانس
               </Link>
-              <a
-                class="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
-                href="/profile/support"
-              >
-                ارتباط با پشتیبانی
-              </a>
+
             </div>
           </div>
         </div>

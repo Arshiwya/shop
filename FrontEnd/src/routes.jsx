@@ -11,6 +11,7 @@ import Guarantee from "./Pages/Faq/Guarantee";
 import OrderEdit from "./Pages/Faq/OrderEdit";
 import TrackOrder from "./Pages/Faq/TrackOrder";
 import CommentsRules from "./Pages/Faq/CommentsRules";
+import Peyment from "./Pages/Faq/Peyment";
 
 const routes = [
   { path: "/", element: <Index /> },
@@ -29,6 +30,7 @@ const routes = [
       { path: "edit-order", element: <OrderEdit /> },
       { path: "track-order", element: <TrackOrder /> },
       { path: "comments", element: <CommentsRules /> },
+      { path: "payment", element: <Peyment /> },
 
 
 
