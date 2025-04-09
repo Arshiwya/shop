@@ -1,5 +1,6 @@
 import { createContext, memo, useState } from "react";
-import { getFromLocal, setToLocal } from "../js/utils/browserMemo";
+// import { getFromLocal, setToLocal } from "../js/utils/browserMemo";
+import { getFromLocal , setToLocal } from "../Js/BrowserMemo";
 
 const ThemeContext = createContext(null);
 const ThemeContextProvider = memo(({ children }) => {
