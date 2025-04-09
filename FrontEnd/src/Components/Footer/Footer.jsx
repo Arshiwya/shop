@@ -36,19 +36,24 @@ export default function Footer() {
 
               <Link
                 className="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
-                to={'guarantee'}
+                to={"guarantee"}
               >
-                 گارانتی
+                گارانتی
               </Link>
-
 
               <Link
                 className="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
-                to={'track-order'}
+                to={"track-order"}
               >
-                 ویرایش سفارش
+                ویرایش سفارش
               </Link>
 
+              <Link
+                className="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
+                to={"comments"}
+              >
+                قوانین انتشار دیدگاه
+              </Link>
             </div>
           </div>
           <div className="flex flex-col gap-8">
@@ -76,19 +81,19 @@ export default function Footer() {
 
               <Link
                 className="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
-                to={'delivery'}
+                to={"delivery"}
               >
                 رویه‌های ارسال
               </Link>
               <Link
                 className="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
-                to={'return'}
+                to={"return"}
               >
                 شرایط مرجوعی
               </Link>
               <Link
                 className="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
-                to={'chance'}
+                to={"chance"}
               >
                 خرید کالای شانس
               </Link>

@@ -10,6 +10,7 @@ import Chance from "./Pages/Faq/Chance";
 import Guarantee from "./Pages/Faq/Guarantee";
 import OrderEdit from "./Pages/Faq/OrderEdit";
 import TrackOrder from "./Pages/Faq/TrackOrder";
+import CommentsRules from "./Pages/Faq/CommentsRules";
 
 const routes = [
   { path: "/", element: <Index /> },
@@ -27,6 +28,7 @@ const routes = [
       { path: "guarantee", element: <Guarantee /> },
       { path: "edit-order", element: <OrderEdit /> },
       { path: "track-order", element: <TrackOrder /> },
+      { path: "comments", element: <CommentsRules /> },
 
 
 
