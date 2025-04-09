@@ -5,6 +5,7 @@ import Order from "./Pages/Faq/Order";
 import Faq from "./Pages/Faq/Faq";
 import FaqIndex from "./Pages/Faq/FaqIndex";
 import Delivery from "./Pages/Faq/Delivery";
+import Return from "./Pages/Faq/Return";
 
 const routes = [
   { path: "/", element: <Index /> },
@@ -17,6 +18,8 @@ const routes = [
       { path: "/faq", element: <Faq /> },
       { path: "order", element: <Order /> },
       { path: "delivery", element: <Delivery /> },
+      { path: "return", element: <Return /> },
+
 
     ],
   },
