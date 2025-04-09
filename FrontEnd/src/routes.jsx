@@ -31,10 +31,6 @@ const routes = [
       { path: "track-order", element: <TrackOrder /> },
       { path: "comments", element: <CommentsRules /> },
       { path: "payment", element: <Peyment /> },
-
-
-
-
     ],
   },
 ];

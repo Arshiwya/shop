@@ -2,17 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Submenus(props) {
-  const [subMenus, setSubMenus] = useState([]);
-
-  useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/products/categories/${subMenus}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setSubMenus(data);
-      });
-  }, []);
-
   return (
     <div
       className="hover:[&amp;>*]block group/submenu layout-container flex flex-col gap-4 py-6 h-96"
@@ -55,11 +44,9 @@ export default function Submenus(props) {
           <div className="absolute top-7 right-0">
             <div className="flex min-w-[176px] border-spacing-px flex-col gap-6 ">
               <div className="flex flex-col gap-2">
-                {subMenus.map((submenu) => (
-                  <Link className="border-r-2 border-brand-secondary bg-white pr-2 text-sm font-bold text-text-black lg:leading-6">
-                    {submenu.name}
-                  </Link>
-                ))}
+                <Link className="border-r-2 border-brand-secondary bg-white pr-2 text-sm font-bold text-text-black lg:leading-6">
+                  {props.name}
+                </Link>
               </div>
             </div>
           </div>

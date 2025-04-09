@@ -28,7 +28,6 @@ export default function Footer() {
                 درباره ما
               </a>
 
-
               <Link
                 className="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
                 to={"guarantee"}
@@ -92,7 +91,6 @@ export default function Footer() {
               >
                 خرید کالای شانس
               </Link>
-
             </div>
           </div>
         </div>
