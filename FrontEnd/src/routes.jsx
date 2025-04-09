@@ -8,6 +8,7 @@ import Delivery from "./Pages/Faq/Delivery";
 import Return from "./Pages/Faq/Return";
 import Chance from "./Pages/Faq/Chance";
 import Guarantee from "./Pages/Faq/Guarantee";
+import OrderEdit from "./Pages/Faq/OrderEdit";
 
 const routes = [
   { path: "/", element: <Index /> },
@@ -23,6 +24,7 @@ const routes = [
       { path: "return", element: <Return /> },
       { path: "chance", element: <Chance /> },
       { path: "guarantee", element: <Guarantee /> },
+      { path: "edit-order", element: <OrderEdit /> },
 
 
 
