@@ -1,81 +1,85 @@
-import React, { useState } from "react";
-import Navbar from "../../Components/Header/Navbar";
-import Footer from "../../Components/Footer/Footer";
+import React from "react";
+import { useLocation } from "react-router-dom";
 import Box from "../../Components/Faq/Box";
 import Button from "../../Components/Faq/Button";
 
 export default function Order() {
+  const location = useLocation();
+  const currentPath = location.pathname;
 
-    const [active , isActive] = useState(null)
+  const buttons = [
+    { title: "همه سوالات", path: "/faq" },
+    { title: "ضمانت خانومی", path: "/faq/guarantee" },
+    { title: "ثبت سفارش", path: "/faq/order" },
+    { title: "جعبه صورتی و شانس ", path: "/faq/pink-box" },
+    { title: "ویرایش سفارش", path: "/faq/edit-order" },
+    { title: "پیگیری سفارش", path: "/faq/track-order" },
+    { title: "ارسال و تحویل کالا", path: "/faq/delivery" },
+    { title: "بازگشت کالا", path: "/faq/return" },
+    { title: "قوانین انتشار دیدگاه", path: "/faq/comments" },
+    { title: "پرداخت و استرداد", path: "/faq/payment" },
+  ];
 
   return (
     <>
-      <Navbar />
-      <div className="container pr-7 w-4/5">
+      <div className="container pr-7 w-full">
         <h1 className="font-Dana text-right text-xl mt-9">پرسش های متداول</h1>
-        <div className="group relative w-full flex items-center gap-x-3 overflow-x-auto mb-4 lg:mb-8 mt-7 child:font-Dana child:text-zinc-600 child-hover:border child-hover:border-pink-700 child:bg-neutral-50 child:p-2">
-          <Button title={"همه سوالات"} />
-          <Button title={"ضمانت خانومی"} />
-          <Button
-            title={"ثبت سفارش"}
-          />
-          <Button title={"جعبه صورتی و شانس "} />
-          <Button title={"ویرایش سفارش"} />
-          <Button title={"پیگیری سفارش"} />
-          <Button title={"ارسال و تحویل کالا"} />
-          <Button title={"بازگشت کالا"} />
-          <Button title={"قوانین انتشار دیدگاه"} />
-          <Button title={"پرداخت و استرداد"} />
+
+        {/* دکمه‌ها */}
+        <div className="group relative w-full flex items-center gap-x-3 overflow-x-auto mb-4 lg:mb-8 mt-7 child:font-Dana child:bg-neutral-50 child:p-2 child-hover:border child-hover:border-pink-700">
+          {buttons.map((btn) => (
+            <Button
+              key={btn.path}
+              title={btn.title}
+              to={btn.path}
+              isActive={currentPath === btn.path}
+            />
+          ))}
         </div>
 
-        {/* Boxs */}
-
+        {/* سوالات و پاسخ‌ها */}
         <div>
           <h1 className="font-Dana text-xl mt-7 text-pink-700">ثبت سفارش</h1>
           <div className="divide-y divide-solid">
             <Box
               question={"چطور در خانومی ثبت نام کنم؟"}
               answer={
-                "از طریق نشان حساب کاربری در بالای صفحه، وارد بخش ورود و ثبت‌نام شوید. شماره تلفن همراه خود را وارد کنید و دکمه «ورود/ثبت‌نام» را کلیک کنید. پس از دریافت کد تایید، آن را در این بخش وارد کنید تا مراحل ورود و ثبت‌نام شما کامل شود."
+                "از طریق نشان حساب کاربری در بالای صفحه، وارد بخش ورود و ثبت‌نام شوید..."
               }
             />
             <Box
               question={"چطور کالای مناسب را انتخاب کنم؟"}
               answer={
-                "برای انتخاب کالای مورد نظر، شما می‌توانید از طریق جست‌وجو در سایت یا نوار منو، به دسته‌بندی یا برند مورد نظر خود بروید و کالای مورد نیاز خود را انتخاب کنید. توضیحات معرفی محصول، نحوه مصرف و دیدگاه‌های کاربران می‌توانند به شما برای انتخاب بهتر کالا کمک کنند، اما توجه فرمایید این توضیحات به معنی مشاوره خرید نیست. بهتر است کالا را با محصولات مشابه مقایسه کنید تا انتخاب درستی بر اساس نیازتان انجام دهید."
+                "برای انتخاب کالای مورد نظر، می‌توانید از جستجو یا دسته‌بندی‌ها استفاده کنید..."
               }
             />
-
             <Box
               question={"چطور می‌توانم محصول را خریداری کنم؟"}
               answer={
-                "برای خرید کالای مورد نظرتان، در صفحه آن کالا، روی دکمه «افزودن به سبد خرید» کلیک و کالا را به سبد خرید خود اضافه کنید. پس از افزودن تمامی کالاهای مورد نظرتان به سبد خرید، از طریق نشان سبد در بالای صفحه، وارد سبد خرید خود شوید. سپس با کلیک روی گزینه «ثبت سفارش»، به بخش انتخاب آدرس و زمان تحویل هدایت می‌شوید. پس از تکمیل این بخش، روش پرداخت خود را انتخاب کرده و خرید خود را تکمیل کنید. پس از پرداخت، شماره سفارش از طریق پیامک برای شما ارسال خواهد شد."
+                "در صفحه محصول، روی «افزودن به سبد خرید» کلیک کنید و در ادامه سفارش خود را ثبت کنید..."
               }
             />
             <Box
               question={"چطور از کد تخفیف استفاده کنم؟ "}
               answer={
-                "روی نشان سبد خرید در بالای سایت کلیک کنید و وارد سبد خرید خود شوید. در انتهای لیست کالاهای موجود در سبد خریدتان، می‌توانید کد تخفیف خود را وارد و روی گزینه «بررسی کد» کلیک کنید. توجه داشته باشید برای بررسی کد باید وارد سایت شوید. در صورتی که شرایط استفاده از کد را داشته باشید و زمان آن منقضی نشده باشد، تخفیف یا هدیه مربوط به آن کد، بر روی فاکتور شما اعمال خواهد شد. در غیر این صورت، پیام خطای متناسب با آن را مشاهده خواهید کرد. "
+                "در سبد خرید، کد تخفیف را وارد کرده و روی «بررسی کد» کلیک کنید..."
               }
             />
-
             <Box
               question={"محصول مورد نظرم موجود نیست، چه زمانی شارژ می‌شود؟"}
               answer={
-                "زمان دقیق شارژ محصولات مشخص نیست و می‌توان با دنبال کردن سایت و استوری‌های پیج خانومی از زمان دقیق آن مطلع شد. "
+                "زمان دقیق شارژ مشخص نیست، می‌توانید استوری‌های خانومی را دنبال کنید..."
               }
             />
-
             <Box
               question={"آیا درج کدپستی در زمان خرید الزامی می‌باشد؟"}
               answer={
-                "درج کد پستی در زمان ثبت آدرس الزامی است. در صورتی که شهر شما در استان‌‌هایی به جز تهران و البرز قرار دارد، ارسال آن توسط پست انجام می‌گیرد؛ در این صورت لطفا از درستی کد پستی وارد شده اطمینان حاصل نمایید."
+                "بله، مخصوصاً اگر شهر شما خارج از تهران و البرز است که ارسال با پست انجام می‌شود..."
               }
             />
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

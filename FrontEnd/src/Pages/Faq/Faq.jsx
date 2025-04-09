@@ -1,20 +1,42 @@
 import React from "react";
-import Navbar from "../Components/Header/Navbar";
-import Footer from "../Components/Footer/Footer";
-import Button from "../Components/Faq/Button";
-import Box from "../Components/Faq/Box";
+import Button from "../../Components/Faq/Button";
+import Box from "../../Components/Faq/Box";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function Faq() {
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  const buttons = [
+    { title: "همه سوالات", path: "/faq" },
+    { title: "ضمانت خانومی", path: "/faq/guarantee" },
+    { title: "ثبت سفارش", path: "/faq/order" },
+    { title: "جعبه صورتی و شانس ", path: "/faq/pink-box" },
+    { title: "ویرایش سفارش", path: "/faq/edit-order" },
+    { title: "پیگیری سفارش", path: "/faq/track-order" },
+    { title: "ارسال و تحویل کالا", path: "/faq/delivery" },
+    { title: "بازگشت کالا", path: "/faq/return" },
+    { title: "قوانین انتشار دیدگاه", path: "/faq/comments" },
+    { title: "پرداخت و استرداد", path: "/faq/payment" },
+  ]
+
   return (
     <>
-      <Navbar />
-      <div className="container pr-7 w-5/6">
+      <div className="container pr-7 w-full">
         <h1 className="font-Dana text-right text-xl mt-9">پرسش های متداول</h1>
-        <div className="group relative w-full flex items-center gap-x-3 overflow-x-auto mb-4 lg:mb-8 mt-7 child:font-Dana child:text-zinc-600 child-hover:border child-hover:border-pink-700 child:bg-neutral-50 child:p-2">
-          <Button title={"همه سوالات"} />
+        <div className="group relative w-full flex items-center gap-x-3 overflow-x-auto mb-4 lg:mb-8 mt-7 child:font-Dana child:text-zinc-600 child-hover:border child-hover:border-pink-700 child:bg-neutral-50 child:p-2 child:rounded">
+        {buttons.map((btn) => (
+            <Button
+              key={btn.path}
+              title={btn.title}
+              to={btn.path}
+              isActive={currentPath === btn.path}
+            />
+          ))}
+          {/* <Button title={"همه سوالات"} />
           <Button title={"ضمانت خانومی"} />
-          <Link to={"/order"}>
+          <Link to={"order"}>
             <Button title={"ثبت سفارش"} />
           </Link>
           <Button title={"جعبه صورتی و شانس "} />
@@ -23,7 +45,7 @@ export default function Faq() {
           <Button title={"ارسال و تحویل کالا"} />
           <Button title={"بازگشت کالا"} />
           <Button title={"قوانین انتشار دیدگاه"} />
-          <Button title={"پرداخت و استرداد"} />
+          <Button title={"پرداخت و استرداد"} /> */}
         </div>
 
         {/* Boxs */}
@@ -370,7 +392,6 @@ export default function Faq() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

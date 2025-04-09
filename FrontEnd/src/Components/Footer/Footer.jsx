@@ -77,7 +77,7 @@ export default function Footer() {
 
               <Link
                 className="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
-                to={"/order"}
+                to={"order"}
               >
                 راهنمای خرید و پرداخت
               </Link>
