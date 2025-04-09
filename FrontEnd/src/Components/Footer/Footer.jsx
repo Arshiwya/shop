@@ -42,6 +42,13 @@ export default function Footer() {
               </Link>
 
 
+              <Link
+                className="w-fit border-transparent text-xs font-medium text-white hover:border-brand-secondary hover:text-brand-secondary lg:border-b lg:pb-1 lg:text-sm"
+                to={'track-order'}
+              >
+                 ویرایش سفارش
+              </Link>
+
             </div>
           </div>
           <div className="flex flex-col gap-8">
