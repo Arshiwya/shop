@@ -49,7 +49,7 @@ export default function RightSectionHeader() {
           </div>
           <input
             placeholder="جست‌وجو"
-            className="h-11 flex-1 rounded font-DanaDemiBold border border-gray-200 py-2.5 pl-2 pr-10 text-body-14 leading-relaxed outline-none placeholder:text-text-mediumGray focus:border-pink-200 md:min-w-[520px] lg:text-body-16"
+            className="h-11 flex-1 rounded font-DanaDemiBold dark:bg-neutral-800 dark:text-white border border-gray-200 py-2.5 pl-2 pr-10 text-body-14 leading-relaxed outline-none placeholder:text-text-mediumGray focus:border-pink-200 md:min-w-[520px] lg:text-body-16"
             type="text"
           />
         </div>

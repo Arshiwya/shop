@@ -6,15 +6,17 @@ import BottonHeader from "./BottonHeader";
 export default function Navbar() {
   return (
     <>
-    {/* Top Haeder */}
-      <div className="container flex items-center justify-between mt-7">
-        <RightSectionHeader />
-        <LeftSectionHeader />
-      </div>
-    {/* Bottom Header */}
-    <div className="mt-6">
-    <BottonHeader/>
-    </div>
+      <nav className="dark:bg-darker pt-7">
+        {/* Top Haeder */}
+        <div className="container flex items-center justify-between dark:bg-darker">
+          <RightSectionHeader />
+          <LeftSectionHeader />
+        </div>
+        {/* Bottom Header */}
+        <div className="mt-6">
+          <BottonHeader />
+        </div>
+      </nav>
     </>
   );
 }

@@ -12,6 +12,9 @@ export default {
         MorabbaMedium: "Morabba Medium",
         MorabbaBold: "Morabba Bold",
       },
+      colors: {
+        darker: "#171717",
+      },
       container: {
         center: true,
         padding: {
