@@ -1,13 +1,31 @@
-import { createContext, memo, useState } from "react";
-// import { getFromLocal, setToLocal } from "../js/utils/browserMemo";
-import { getFromLocal , setToLocal } from "../Js/BrowserMemo";
+import { createContext, memo, useState, useEffect } from "react";
+import { getFromLocal, setToLocal } from "../Js/utils/BrowserMemo";
 
 const ThemeContext = createContext(null);
+
 const ThemeContextProvider = memo(({ children }) => {
-  const initTheme = getFromLocal("theme") === "dark" ? true : false;
-  // console.log("init theme", getFromLocal("theme"));
+  const initTheme = getFromLocal("theme") === "dark";
 
   const [isDark, setIsDark] = useState(initTheme);
+
+  // Sync tailwind class on <html>
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDark]);
+
+  // First load: Apply theme from localStorage
+  useEffect(() => {
+    const savedTheme = getFromLocal("theme");
+    if (savedTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
 
   const changToDark = () => {
     setIsDark(true);
@@ -20,8 +38,9 @@ const ThemeContextProvider = memo(({ children }) => {
   };
 
   const toggleTheme = () => {
-    setToLocal("theme", isDark ? "light" : "dark");
-    setIsDark(!isDark);
+    const newTheme = !isDark;
+    setIsDark(newTheme);
+    setToLocal("theme", newTheme ? "dark" : "light");
   };
 
   const ThemeContextValue = {
@@ -39,3 +58,46 @@ const ThemeContextProvider = memo(({ children }) => {
 });
 
 export { ThemeContext, ThemeContextProvider };
+
+
+// import { createContext, memo, useState } from "react";
+// // import { getFromLocal, setToLocal } from "../js/utils/browserMemo";
+// import { getFromLocal , setToLocal } from "../Js/utils/BrowserMemo";
+
+// const ThemeContext = createContext(null);
+// const ThemeContextProvider = memo(({ children }) => {
+//   const initTheme = getFromLocal("theme") === "dark" ? true : false;
+//   // console.log("init theme", getFromLocal("theme"));
+
+//   const [isDark, setIsDark] = useState(initTheme);
+
+//   const changToDark = () => {
+//     setIsDark(true);
+//     setToLocal("theme", "dark");
+//   };
+
+//   const changToLight = () => {
+//     setIsDark(false);
+//     setToLocal("theme", "light");
+//   };
+
+//   const toggleTheme = () => {
+//     setToLocal("theme", isDark ? "light" : "dark");
+//     setIsDark(!isDark);
+//   };
+
+//   const ThemeContextValue = {
+//     isDark,
+//     changToDark,
+//     changToLight,
+//     toggleTheme,
+//   };
+
+//   return (
+//     <ThemeContext.Provider value={ThemeContextValue}>
+//       {children}
+//     </ThemeContext.Provider>
+//   );
+// });
+
+// export { ThemeContext, ThemeContextProvider };
