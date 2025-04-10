@@ -8,7 +8,8 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 export default function SliderIndex() {
   return (
-    <main>
+    <main className="">
+    <div >
       <div className="flex items-center justify-center mt-7">
         <div className="relative w-full">
           <Swiper
@@ -40,6 +41,8 @@ export default function SliderIndex() {
           {/* Custom Buttons */}
         </div>
       </div>
+    </div>
     </main>
+
   );
 }

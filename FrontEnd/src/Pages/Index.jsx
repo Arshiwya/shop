@@ -11,16 +11,19 @@ import Footer from "../Components/Footer/Footer";
 export default function Index() {
   return (
     <>
-      <Navbar />
-      <div className="container">
-        <SliderIndex />
-        <PopularProducts />
-        <HomePageBox />
-        <Banner />
-        <NewProducts />
-        <DescriptionHome />
+      <div className="dark:bg-darker">
+        <Navbar />
+        <div className="container ">
+          <SliderIndex />
+          <PopularProducts />
+          <HomePageBox />
+          <Banner />
+          <NewProducts />
+          <DescriptionHome />
+        </div>
+
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }
