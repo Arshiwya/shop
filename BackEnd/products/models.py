@@ -86,8 +86,8 @@ class Product(models.Model):
     discount = models.IntegerField(verbose_name="discount", null=False, blank=False, default=0)
     stock = models.IntegerField(verbose_name="stock", null=False, blank=False, default=0)
     categories = models.ManyToManyField(to=Category, related_name="products", verbose_name="categories", blank=True)
-    status = models.ForeignKey(to=ProductStatus, verbose_name="status", on_delete=models.PROTECT,
-                               related_name="products", null=True, blank=True)
+    status = models.ManyToManyField(to=ProductStatus, verbose_name="status",
+                                    related_name="products", null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="create time")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="last update")
     objects = ProductManager()
@@ -116,11 +116,14 @@ class Product(models.Model):
         return names
 
     def get_status(self):
-
-        if self.status is not None:
-            return self.status.name
+        if len(self.status.all()) == 0:
+            return ["normal"]
         else:
-            return "normal"
+            statuses = []
+            for status in self.status.all():
+                statuses.append(status.name)
+
+            return statuses
 
     def get_final_price(self):
         final_price = (self.price * ((100 - self.discount) / 100))

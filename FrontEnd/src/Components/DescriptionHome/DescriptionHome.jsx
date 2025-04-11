@@ -21,12 +21,12 @@ export default function DescriptionHome() {
           <div className="overflow-hidden max-h-64">
             <h2>
               <strong>
-                <h3 className="text-lg font-Dana mb-2 text-gray-500">
+                <h3 className="text-lg font-Dana mb-5 text-gray-500 dark:text-gray-400">
                   خرید لوازم آرایشی و بهداشتی از فروشگاه اینترنتی خانومی
                 </h3>
               </strong>
             </h2>
-            <span className="leading-8 text-gray-600 font-Dana">
+            <span className="leading-8 text-gray-600 font-Dana dark:text-zinc-300">
               فروشگاه لوازم آرایشی و بهداشتی خانومی با عرضه بهترین برندهای لوازم
               آرایش، عطر و ادکلن اصل و تمامی لوازم بهداشتی و مراقبتی پوست و مو،
               امکان خرید اینترنتی امن را برای شما فراهم کرده است. شما در خانومی
@@ -40,7 +40,7 @@ export default function DescriptionHome() {
             className={
               isShowDescrip
                 ? "hidden"
-                : "absolute right-0 top-0 h-full w-full bg-gradient-to-t from-white"
+                : "absolute right-0 top-0 h-full w-full rounded-md bg-gradient-to-t from-white dark:bg-gradient-to-t dark:from-zinc-600"
             }
           ></div>
         </section>
@@ -48,11 +48,11 @@ export default function DescriptionHome() {
         <div className={isShowDescrip ? "block" : "hidden"}>
           <div className="font-Dana leading-9">
             <strong>
-              <h1 className="mt-5 mb-2 text-md font-Dana text-gray-500">
+              <h1 className="mt-5 mb-2 text-md font-Dana text-gray-500 dark:text-gray-400">
                 خرید آنلاین لوازم آرایش از وب‌سایت خانومی
               </h1>
             </strong>
-            <span className="leading-4 text-gray-600 ">
+            <span className="leading-4 text-gray-600 dark:text-zinc-300">
               فروشگاه لوازم آرایشی بهداشتی خانومی، فعالیت خود را سال 1392 آغاز
               کرده است. خانومی با فروش اینترنتی مجموعه کاملی از بهترین‌های لوازم
               آرایشی و بهداشتی، شامل بهترین برندهای لوازم آرایشی مثل کالیستا،
@@ -75,7 +75,7 @@ export default function DescriptionHome() {
           </div>
         </div>
 
-        <div className="text-left mt-2 text-pink-800">
+        <div className="text-left mt-5 text-pink-600">
           {isShowDescrip ? (
             <Button
               className="font-DanaDemiBold"

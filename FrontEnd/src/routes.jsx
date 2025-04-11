@@ -1,6 +1,6 @@
 import Index from "./Pages/Index";
 import CategoryInfo from "./Pages/CategoryInfo";
-import Product from "./Pages/Product";
+import ProductInfo from "./Pages/ProductInfo";
 import Order from "./Pages/Faq/Order";
 import Faq from "./Pages/Faq/Faq";
 import FaqIndex from "./Pages/Faq/FaqIndex";
@@ -15,8 +15,8 @@ import Peyment from "./Pages/Faq/Peyment";
 
 const routes = [
   { path: "/", element: <Index /> },
-  { path: "/category-info/:categoryName", element: <CategoryInfo /> },
-  { path: "/product-info/:producName", element: <Product /> },
+  { path: "/categories/:categoriesName", element: <CategoryInfo /> },
+  { path: "/products/:productsName", element: <ProductInfo /> },
   {
     path: "/faq",
     element: <FaqIndex />,
