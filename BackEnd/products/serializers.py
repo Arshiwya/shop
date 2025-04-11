@@ -5,7 +5,7 @@ from .models import Product, Category
 class ProductListDetailSerializer(serializers.ModelSerializer):
     images = serializers.ListField(source="get_images")
     categories = serializers.ListField(source="get_categories")
-    status = serializers.CharField(source="get_status")
+    status = serializers.ListField(source="get_status")
     final_price = serializers.IntegerField(source="get_final_price")
 
     class Meta:

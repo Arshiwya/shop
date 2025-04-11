@@ -54,7 +54,7 @@ class OfferProductListView(ProductCreateListView):
     http_method_names = ["get"]
 
     def get_queryset(self):
-        queryset = Product.objects.filter(status__name="offer")
+        queryset = Product.objects.filter(status__name__in=["offer"])
         return queryset
 
 
@@ -63,7 +63,23 @@ class PopularProductListView(ProductCreateListView):
     http_method_names = ["get"]
 
     def get_queryset(self):
-        queryset = Product.objects.filter(status__name="popular")
+        queryset = Product.objects.filter(status__name__in=["popular"])
+        return queryset
+
+
+class BestSellerProductListView(ProductCreateListView):
+    http_method_names = ["get"]
+
+    def get_queryset(self):
+        queryset = Product.objects.filter(status__name__in=["best-seller"])
+        return queryset
+
+
+class NewProductListView(ProductCreateListView):
+    http_method_names = ["get"]
+
+    def get_queryset(self):
+        queryset = Product.objects.all()[0:3]
         return queryset
 
 
