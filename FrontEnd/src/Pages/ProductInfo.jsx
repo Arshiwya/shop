@@ -17,7 +17,15 @@ export default function ProductInfo() {
   return (
     <>
       <Navbar />
-
+      <section>
+        <div className="container">
+          <div>
+            <div>
+              <img src="" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
       <Footer />
     </>
   );
