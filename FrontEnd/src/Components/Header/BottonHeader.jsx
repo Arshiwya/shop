@@ -3,6 +3,7 @@ import Submenus from "./Submenus";
 
 export default function BottonHeader() {
   const [categorys, setCategorys] = useState([]);
+  const [menus , setMenus] = useState([])
 
   useEffect(() => {
     fetch("http://127.0.0.1:8000/api/products/categories/")
@@ -25,7 +26,6 @@ export default function BottonHeader() {
                     <Submenus {...submenu} />
                   ))}
                 </div>
-
               </li>
             ))}
           </ul>
