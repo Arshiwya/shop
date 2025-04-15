@@ -12,11 +12,14 @@ import OrderEdit from "./Pages/Faq/OrderEdit";
 import TrackOrder from "./Pages/Faq/TrackOrder";
 import CommentsRules from "./Pages/Faq/CommentsRules";
 import Peyment from "./Pages/Faq/Peyment";
+import BestSellerProducts from "./Pages/BestSellerProducts";
 
 const routes = [
   { path: "/", element: <Index /> },
   { path: "/categories/:categoriesName", element: <CategoryInfo /> },
   { path: "/products/:productsName", element: <ProductInfo /> },
+  { path: "/best-seller", element: <BestSellerProducts /> },
+
   {
     path: "/faq",
     element: <FaqIndex />,

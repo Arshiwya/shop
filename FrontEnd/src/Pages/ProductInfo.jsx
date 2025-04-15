@@ -1,18 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Header/Navbar";
 import Footer from "../Components/Footer/Footer";
-import { useParams } from "react-router-dom";
+import { data, useParams } from "react-router-dom";
 
 export default function ProductInfo() {
   const { productsName } = useParams();
+
+  const [price, setPrice] = useState();
+  const [description, setDescription] = useState();
+  const [categories, setCategories] = useState([]);
+  const [name, setName] = useState();
+  const [images, setImages] = useState();
 
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/products/${productsName}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        setPrice(data.price);
+        setDescription(data.description);
+        setCategories(data.categories);
+        setName(data.name);
+        setImages(data.images);
       });
   }, []);
+
+
 
   return (
     <>
@@ -25,7 +38,7 @@ export default function ProductInfo() {
               <div className="group relative w-full lg:w-[316px]">
                 <figure className="!h-64 !min-h-[256px] !w-64 !min-w-[256px] overflow-visible p-1 lg:!h-[316px] lg:!min-h-80 lg:!w-[316px] lg:!min-w-full">
                   <img
-                    src="/img/shon.jpg"
+                    src={`http://127.0.0.1:8000/media/products/samples/${images}`}
                     className="h-full w-full rounded shadow"
                     width="308"
                     height="308"
@@ -43,11 +56,11 @@ export default function ProductInfo() {
                 >
                   <div class="mb-3 flex h-fit flex-col gap-2 lg:mb-5">
                     <h1 class="text-body-16 font-Dana text-pink-700 dark:text-pink-500">
-                      شامپو بدن شون مدل کرمی شیر توت فرنگی حجم 300 میلی لیتر
+                      {name}
                     </h1>
-                    <span class="hidden text-body-14 font-Dana text-gray-500 dark:text-zinc-100 lg:flex">
+                    {/* <span class="hidden text-body-14 font-Dana text-gray-500 dark:text-zinc-100 lg:flex">
                       Schon Creamy Body Wash 300ml
-                    </span>
+                    </span> */}
                   </div>
                   <div
                     class="flex w-full flex-col lg:gap-y-3"
@@ -62,12 +75,10 @@ export default function ProductInfo() {
                       <div class="flex flex-col gap-3 text-body-16 text-text-darkGray">
                         <div class="flex items-center gap-1.5">
                           <span className="font-DanaDemiBold text-gray-700 dark:text-stone-400">
-                            {" "}
                             دسته بندی :
                           </span>
                           <span className="font-Dana dark:text-red-200">
-                            {" "}
-                            {"utgf"}
+                            {categories[0]}
                           </span>
                         </div>
                       </div>
@@ -80,7 +91,7 @@ export default function ProductInfo() {
                       >
                         توضیحات :
                         <span class="left-to-right inline-block font-Dana  dark:text-red-200">
-                          {"kjbkjb "}
+                          {description}
                         </span>
                       </div>
                     </div>
@@ -205,7 +216,7 @@ export default function ProductInfo() {
 
                     {/* price */}
                     <div className=" flex items-center justify-center font-DanaDemiBold text-black">
-                      <span>12/000</span>
+                      <span>{price}</span>
                       <span>تومان</span>
                     </div>
                     <div

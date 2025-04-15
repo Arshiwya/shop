@@ -16,7 +16,7 @@ export default function DescriptionHome() {
 
   return (
     <>
-      <div className="container mt-56 sm:mt-40">
+      <div className="container mt-56 sm:mt-40 mb-14">
         <section className="mt-20 relative">
           <div className="overflow-hidden max-h-64">
             <h2>
