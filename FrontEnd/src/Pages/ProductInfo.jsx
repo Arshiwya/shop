@@ -16,16 +16,14 @@ export default function ProductInfo() {
     fetch(`http://127.0.0.1:8000/api/products/${productsName}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setPrice(data.price);
         setDescription(data.description);
         setCategories(data.categories);
         setName(data.name);
+        console.log(data.images)
         setImages(data.images);
       });
   }, []);
-
-
 
   return (
     <>
@@ -38,7 +36,7 @@ export default function ProductInfo() {
               <div className="group relative w-full lg:w-[316px]">
                 <figure className="!h-64 !min-h-[256px] !w-64 !min-w-[256px] overflow-visible p-1 lg:!h-[316px] lg:!min-h-80 lg:!w-[316px] lg:!min-w-full">
                   <img
-                    src={`http://127.0.0.1:8000/media/products/samples/${images}`}
+                    src={`http://127.0.0.1:8000/${images}`}
                     className="h-full w-full rounded shadow"
                     width="308"
                     height="308"
